@@ -17,7 +17,7 @@
                     </div>
                     <div class="overflow-x-auto py-4 mt-4">
 
-                        <form method="POST" action="{{ route('login') }}">
+                        <form method="POST" action="{{ route('laporan.store') }}" enctype="multipart/form-data">
                             @csrf
                             <!-- Judul laporan -->
                             <div class="mt-2">
