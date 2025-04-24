@@ -55,7 +55,7 @@
                     <form method="POST" action="{{ route('respon.store') }}">
                         @csrf
 
-                        <input type="number" name="id" value="{{$data->id}}">
+                        <input type="number" name="id_laporan" value="{{$data->id}}" hidden>
 
                         <!-- Judul laporan -->
                         <div class="mt-4">

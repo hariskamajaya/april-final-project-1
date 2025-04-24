@@ -40,7 +40,7 @@ class ResponController extends Controller
             'tanggal_respon' => Carbon::now()->format('Y-m-d H:i:s'),
         ]);
 
-        $status = Laporan::findOrFail($request->id);
+        $status = Laporan::findOrFail($request->id_laporan);
         $status->status = $request->status;
         $status->save();
 
