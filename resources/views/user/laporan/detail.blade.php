@@ -7,7 +7,7 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="bg-yellow-200 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6">
                     <div class="text-xl font-semibold text-gray-900">
                         Detail Laporan {{$data->judul_laporan}}
@@ -44,7 +44,7 @@
                 </div>
             </div>
 
-            <div class="overflow-hidden shadow-sm sm:rounded-lg mt-2 bg-gray-200">
+            <div class="overflow-hidden shadow-sm sm:rounded-lg mt-2 bg-white">
                 <div class="p-6">
                     <div class="flex justify-between">
                         <div class="text-xl font-semibold text-gray-900">
