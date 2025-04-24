@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
 class AdminMiddleware
@@ -18,6 +19,12 @@ class AdminMiddleware
 
         // route untuk handle admin.
 
-        return $next($request);
+        if(Auth::check() && Auth::user()->isAdmin)
+        {
+            return $next($request);
+        }
+
+        return redirect()->route('dashboard.user');
+
     }
 }
