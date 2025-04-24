@@ -30,7 +30,7 @@
                                         <td class="py-2 px-4">{{$item->status}}</td>
                                         <td class="py-2 px-4">{{$item->tanggal_laporan}}</td>
                                         <td class="py-2 px-4 text-center">
-                                            <a href="{{route('respon.show')}}" class="text-sm uppercase me-2">detail</a>
+                                            <a href="{{route('respon.show', $item->id)}}" class="text-sm uppercase me-2">detail</a>
                                             <a href="" class="text-sm uppercase font-semibold ms-2">hapus</a>
                                         </td>
                                     </tr>

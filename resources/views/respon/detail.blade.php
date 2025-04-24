@@ -48,6 +48,48 @@
                 <div class="p-6">
                     <div class="flex justify-between">
                         <div class="text-xl font-semibold text-gray-900">
+                            Tambah Respon
+                        </div>
+                    </div>
+
+                    <form method="POST" action="{{ route('respon.store') }}">
+                        @csrf
+                        <!-- Judul laporan -->
+
+                        <div class="mt-4">
+                            <x-input-label for="status" :value="__('Status Laporan')" />
+                            <select name="status" id="status"
+                                class="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
+                                required>
+                                <option value="{{$data->laporan->status}}">{{$data->laporan->status}}</option>
+                                <option value="proses">Proses</option>
+                                <option value="selesai">Selesai</option>
+                                <option value="ditolak">Ditolak</option>
+                            </select>
+                            <x-input-error :messages="$errors->get('jenis')" class="mt-2" />
+                        </div>
+
+                        <div class="mt-2">
+                            <x-input-label for="detail_respon" :value="__('Detail Respon')" />
+                            <textarea name="detail_respon" id="detail_respon"
+                                class="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"></textarea>
+                            <x-input-error :messages="$errors->get('detail_respon')" class="mt-2" />
+                        </div>
+
+                        <div class="flex items-center justify-end mt-4">
+                            <x-primary-button class="ms-3">
+                                {{ __('Log in') }}
+                            </x-primary-button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+            <div class="overflow-hidden shadow-sm sm:rounded-lg mt-2 bg-white">
+                <div class="p-6">
+                    <div class="flex justify-between">
+                        <div class="text-xl font-semibold text-gray-900">
                             Respon Pengaduan {{$data->judul_laporan}}
                         </div>
                         <div class="">

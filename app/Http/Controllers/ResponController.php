@@ -36,9 +36,11 @@ class ResponController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Respon $respon)
+    public function show($id)
     {
-        //
+        $data = Laporan::findOrFail($id);
+        $respon = Respon::where('id_laporan', $id)->get()->all();
+        return view('respon.detail', compact('data', 'respon'));
     }
 
     /**
