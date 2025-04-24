@@ -25,7 +25,7 @@ Route::prefix('user-area')->middleware(['auth', 'verified'])->group(function(){
     
     // route untuk dashboard user
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return view('user.dashboard');
     })->name('dashboard.user');
 
 
