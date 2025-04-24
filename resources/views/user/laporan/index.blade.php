@@ -12,18 +12,25 @@
                     <div class="text-xl font-semibold text-gray-900">
                         Selamat Datang,
                     </div>
-                    <div class="text-xl text-gray-900">
-                        {{Auth::user()->name}}
+                    <div class="text-md text-gray-900">
+                        Berikut adalah laporan anda yang sudah diajukan.
                     </div>
-
-                    <div class="overflow-x-auto px-6 py-4">
-                        <table>
-                            <thead>
-                                <th>Judul Laporan</th>
-                                <th>Status</th>
-                                <th>Tanggal Dibuat</th>
-                                <th>Pilihan</th>
+                    <div class="overflow-x-auto py-4 mt-4">
+                        <table class="min-w-full bg-transparent">
+                            <thead class="uppercase font-medium text-sm bg-yellow-200 dark:bg-yellow-400">
+                                <th class="py-2">Judul Laporan</th>
+                                <th class="py-2">Status</th>
+                                <th class="py-2">Tanggal Dibuat</th>
+                                <th class="py-2">Pilihan</th>
                             </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="py-2 px-4">Air mampet</td>
+                                    <td class="py-2 px-4">Air mampet</td>
+                                    <td class="py-2 px-4">Air mampet</td>
+                                    <td class="py-2 px-4">Air mampet</td>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                 </div>
