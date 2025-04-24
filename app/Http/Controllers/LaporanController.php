@@ -46,7 +46,7 @@ class LaporanController extends Controller
             $path = 'public/images/laporan';
             $ext = $gambar->getClientOriginalExtension();
             $name = 'laporan_'.Carbon::now()->format('Ymdhis').'.'.$ext;
-            $gambar->store($path, $name);
+            $gambar->storeAs($path, $name);
             $input['dokumentasi'] = $name;
         }
 
