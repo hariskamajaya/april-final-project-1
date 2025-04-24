@@ -64,9 +64,10 @@ class LaporanController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Laporan $laporan)
+    public function show($id)
     {
-        //
+        $data = Laporan::findOrFail($id);
+        return view('user.laporan.detail', compact('data'));
     }
 
     /**
