@@ -19,7 +19,6 @@
 
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
-
                             <!-- Judul laporan -->
                             <div class="mt-2">
                                 <x-input-label for="judul_laporan" :value="__('Judul Laporan')" />

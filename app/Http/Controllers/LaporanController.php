@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Laporan;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LaporanController extends Controller
 {
@@ -29,7 +31,34 @@ class LaporanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+
+        $request->validate([
+            'judul_laporan' => 'required|string|min:5|max:50',
+            'jenis' => 'required',
+            'dokumentasi' => 'required|file|max:10240',
+            'detail_laporan' => 'required',
+        ]);
+
+        if($request->hasFile('dokumentasi'))
+        {
+            $gambar = $request->file('dokumentasi');
+            $path = 'public/images/laporan';
+            $ext = $gambar->getClientOriginalExtension();
+            $name = 'laporan_'.Carbon::now()->format('Ymdhis').'.'.$ext;
+            $gambar->store($path, $name);
+            $input['dokumentasi'] = $name;
+        }
+
+        //id user = user yang sedang login.
+        $input['id_user'] = Auth::user()->id;
+        $input['tanggal_laporan'] = Carbon::now()->format('Y-m-d H:i:s');
+
+        Laporan::create($input);
+        return redirect()->route('laporan.index');
+
+
+
     }
 
     /**
