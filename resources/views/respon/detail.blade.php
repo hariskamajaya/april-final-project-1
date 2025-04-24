@@ -54,8 +54,10 @@
 
                     <form method="POST" action="{{ route('respon.store') }}">
                         @csrf
-                        <!-- Judul laporan -->
 
+                        <input type="number" name="id" value="{{$data->id}}">
+
+                        <!-- Judul laporan -->
                         <div class="mt-4">
                             <x-input-label for="status" :value="__('Status Laporan')" />
                             <select name="status" id="status"

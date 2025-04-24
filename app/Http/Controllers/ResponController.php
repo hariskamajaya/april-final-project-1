@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Laporan;
 use App\Models\Respon;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ResponController extends Controller
@@ -30,7 +31,21 @@ class ResponController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'detail_respon' => 'required'
+        ]);
+
+        Respon::create([
+            'detail_respon' => $request->detail_respon,
+            'tanggal_respon' => Carbon::now()->format('Y-m-d H:i:s'),
+        ]);
+
+        $status = Laporan::findOrFail($request->id);
+        $status->status = $request->status;
+        $status->save();
+
+        return back()->with('success','Respon ditambahkan');
+
     }
 
     /**
