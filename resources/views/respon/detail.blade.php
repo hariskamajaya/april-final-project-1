@@ -88,21 +88,25 @@
                 </div>
             </div>
 
-            <div class="overflow-hidden shadow-sm sm:rounded-lg mt-2 bg-white">
-                <div class="p-6">
-                    <div class="flex justify-between">
-                        <div class="text-xl font-semibold text-gray-900">
-                            Respon Pengaduan {{$data->judul_laporan}}
+            @foreach ($respon as $item)
+                <div class="overflow-hidden shadow-sm sm:rounded-lg mt-2 bg-white">
+                    <div class="p-6">
+                        <div class="flex justify-between">
+                            <div class="text-xl font-semibold text-gray-900">
+                                Respon Pengaduan {{$data->judul_laporan}}
+                            </div>
+                            <div class="">
+                                {{$item->tanggal_reposn}}
+                            </div>
                         </div>
-                        <div class="">
-                            20-05-2025
+                        <div class="text-md text-gray-900 mt-4">
+                            {{$item->detail_respon}}
                         </div>
-                    </div>
-                    <div class="text-md text-gray-900 mt-4">
-                        Berikut adalah progress laporan yang anda ajukan.
                     </div>
                 </div>
-            </div>
+            @endforeach
+
+
 
         </div>
     </div>
