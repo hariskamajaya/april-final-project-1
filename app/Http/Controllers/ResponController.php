@@ -37,6 +37,7 @@ class ResponController extends Controller
 
         Respon::create([
             'detail_respon' => $request->detail_respon,
+            'id_laporan' => $request->id_laporan,
             'tanggal_respon' => Carbon::now()->format('Y-m-d H:i:s'),
         ]);
 
