@@ -61,7 +61,7 @@
                             <select name="status" id="status"
                                 class="block mt-1 w-full border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm"
                                 required>
-                                <option value="{{$data->laporan->status}}">{{$data->laporan->status}}</option>
+                                <option value="{{$data->status}}">{{$data->status}}</option>
                                 <option value="proses">Proses</option>
                                 <option value="selesai">Selesai</option>
                                 <option value="ditolak">Ditolak</option>
